@@ -256,3 +256,11 @@ endif
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/havoc/config/partner_gms.mk
 -include vendor/havoc/config/version.mk
+
+# Face Unlock
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
